@@ -1,0 +1,20 @@
+{
+    "token": "ODA5Nzg3NTEzNzM1NzQxNDUy.YCaLZA.tmbUWSXTfVeeHajNBvdHgfC5Bxc",
+    "prefix": "pr ",
+    "rouletteDuration": 900000,
+    "minGroupSize": 3,
+    "maxGroupSize": 5,
+    "announcementTimeLong": 180000,
+    "announcementTimeShort": 30000,
+    "byenOpenTime": 1615586400,
+    "announcementtimeByenLong": 600000,
+    "announcementtimeByenSort": 60000,
+    "partyRouletteServerID": "693391889470193674",
+    "moderatorRoleID": "820344852067385344",
+    "vorsCategoryID": "696126877009576126",
+    "byenCategoryID": "696126780557361202", 
+    "inngangspartietVoiceChannelID": "693391889470193678",
+    "drikkeTextChannelID": "818066837882273803",
+    "spillTextChannelID": "819639761001381938",
+    "textChatCategoryID": "693391889470193675"
+}

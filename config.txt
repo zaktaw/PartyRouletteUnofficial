@@ -1,0 +1,16 @@
+{
+    "token": "ODA5Nzg3NTEzNzM1NzQxNDUy.YCaLZA.tmbUWSXTfVeeHajNBvdHgfC5Bxc",
+    "prefix": "pr ",
+    "categoryID": "696126877009576126",
+    "rouletteDuration": = 900000, // 15 minutes
+    "minGroupSize": 3,
+    "maxGroupSize": 5,
+    "announcementTimeLong": 180000, // 3 minutes
+    "announcementTimeShort": 30000, // 30 seconds
+    "byenOpenTime": 1615586400, // https://www.unixtimestamp.com/ (uses your timezone, copy stimestamp directly)
+    "byenCategoryID": "696126780557361202",
+    "serverID": "693391889470193674",
+    "announcementtimeByenLong": 600000, // 10 minutes
+    "announcementtimeByenSort": 60000 // 1 minute,
+    "lobbyID": "693391889470193678" // inngangspartiet
+}
