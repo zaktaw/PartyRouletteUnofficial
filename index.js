@@ -51,28 +51,6 @@ bot.on('message', (msg) => {
 
     if (msg.author.bot) return; // stops bot from replying to itself
 
-    // recieve messages from users
-    if (msg.channel.type == "dm") {
-        if (msg.content.toLowerCase().startsWith("report")) {
-            bot.channels.fetch('819537106576736286')
-                .then(channel => channel.send(`${msg.author.username} filed a user report: ${msg.content.substring("report".length)}`))
-                    .then(msg.reply("The report was successfully sent. The moderators will handle the issue."))
-                    .catch(err => console.error(err))
-        }
-
-        else if (msg.content.toLowerCase().startsWith("join")) {
-            bot.channels.fetch('819537106576736286')
-                .then(channel => channel.send(`${msg.author.username} requested to join${msg.content.length > "join".length ? ": " + msg.content.substring("join".length) : ''}`))
-                    .then(msg.reply("The request was successfully sent. The moderators will handle the request."))
-                    .catch(err => console.error(err))
-        }
-
-        else {
-            msg.reply("Not a valid message. Message needs to start with report or join.")
-                .catch(err => console.error(err))
-        }
-    }
-
     let args = msg.content.substring(PREFIX.length).split(" ");
 
     // Prevent spam from bot
