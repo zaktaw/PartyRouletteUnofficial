@@ -3,8 +3,8 @@ const config = require('./config.json');
 const byen = require('./byen.js');
 const activities = require('./activities.js');
 
-const CATEGORY_ID = config.categoryID;
-const LOBBY_ID = config.lobbyID;
+const CATEGORY_ID = config.vorsCategoryID;
+const LOBBY_ID = config.inngangspartietVoiceChannelID;
 
 let rouletteDuration = config.rouletteDuration; // how much time between the channels changing (time in milliseconds).
 let announcementTimeLong = config.announcementTimeLong; // announce to the members that the channels changing in x time long before channels are changing (time in milleseconds). Disabled if time=0.
@@ -16,7 +16,7 @@ let started = false; // a roulette has been started.
 
 function startRoulette(msg) {
     if (started) return msg.channel.send("Party roulette has already been started. Stop the party roulette with command 'pr stop' before starting a new one.");
-    executeRoulette(msg);
+    executeRoulette(msg)
     let changeChannelsInterval = setInterval(() => executeRoulette(msg), rouletteDuration);
     started = true;
     msg.channel.send("Party roulette has been started.")
