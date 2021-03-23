@@ -1,7 +1,7 @@
 const config = require('./config.json')
 const BYEN_OPEN_TIME = config.byenOpenTime * 1000
 const BYEN_CATEGORY_ID = config.byenCategoryID
-const SERVER_ID = config.serverID
+const SERVER_ID = config.partyRouletteServerID
 const ANNOUNCEMENT_TIME_LONG = config.announcementtimeByenLong
 const ANNOUNCEMENT_TIME_SHORT = config.announcementtimeByenSort
 
@@ -42,6 +42,10 @@ function open(msg) {
             {   
                 id: SERVER_ID,
                 allow: [ 'CONNECT' ]
+            },
+            {   
+                id: config.timeoutRoleID,
+                deny: [ 'CONNECT' ]
             }
         ])
     });

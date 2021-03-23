@@ -9,6 +9,7 @@ async function on(msg) {
         || channel.id == config.drikkeTextChannelID
         || channel.id == config.spillTextChannelID
         || channel.id == config.inngangspartietVoiceChannelID
+        || channel.parentID == config.byenCategoryID
         );
     
     channels.forEach((channel) => {
@@ -18,26 +19,47 @@ async function on(msg) {
                 {   
                     id: config.partyRouletteServerID, // everyone
                     allow: [ 'SEND_MESSAGES' ]
+                },
+                {
+                    id: config.timeoutRoleID,
+                    deny: [ 'SEND_MESSAGES', 'ADD_REACTIONS' ]
                 }
             ])
         }
 
         else if (channel.type == "voice") {
-            channel.overwritePermissions([
-                {   
-                    id: config.partyRouletteServerID, // everyone
-                    allow: [ 'CONNECT' ]
-                }
-            ])
+
+            if (channel.id == config.inngangspartietVoiceChannelID) {
+                channel.overwritePermissions([
+                    {   
+                        id: config.partyRouletteServerID, // everyone
+                        allow: [ 'CONNECT' ]
+                    },
+                    {
+                        id: config.timeoutRoleID,
+                        deny: [ 'CONNECT' ]
+                    }
+                ])
+            }
+
+            else {
+                channel.overwritePermissions([
+                    {   
+                        id: config.partyRouletteServerID, // everyone
+                        deny: [ 'CONNECT' ]
+                    },
+                    {
+                        id: config.timeoutRoleID,
+                        deny: [ 'CONNECT' ]
+                    }
+                ])
+            }
         }
     });
 }
 
 // deny sending messages for selected channels
 async function off(msg) {
-
-    console.log("server: " + config.partyRouletteServerID)
-    console.log("mod: " + config.moderatorRoleID)
 
     let channels = await msg.guild.channels.cache.filter(
         channel => channel.parentID == config.textChatCategoryID

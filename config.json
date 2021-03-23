@@ -15,5 +15,7 @@
     "inngangspartietVoiceChannelID": "693391889470193678",
     "drikkeTextChannelID": "818066837882273803",
     "spillTextChannelID": "819639761001381938",
-    "textChatCategoryID": "693391889470193675"
+    "invitasjonChannelID": "823168772605083670",
+    "textChatCategoryID": "693391889470193675",
+    "timeoutRoleID": "823967642170949752"
 }
