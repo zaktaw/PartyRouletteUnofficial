@@ -72,12 +72,6 @@ bot.on('message', (msg) => {
             msg.delete({ timeout: 5000 });
             break;
 
-
-        case 'velkommen' :
-            velkommen(msg);
-            msg.delete({ timeout: 5000 });
-            break;
-
         default :
             msg.channel.send(`"${args[0]}" is an invalid command.`);
     }   
