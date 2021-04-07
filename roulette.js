@@ -155,7 +155,7 @@ function announceChangingChannelsLong(msg) {
     let timeInMinutes = ANNOUNCEMENT_TIME_LONG/1000/60;
     announcementLongTimeout = setTimeout( () => {
         msg.channel.send("@everyone Channels are changing in " + timeInMinutes  + (timeInMinutes>1?" minutes":" minute") + "!") //@everyone is used to tag everyone in the server.
-            .then(message => message.delete({ timeout: 5000 })); // delete message after 5 seconds
+            .then(message => message.delete({ timeout: 10000 })); 
     }, time);
 }
 
@@ -165,7 +165,7 @@ function announceChangingChannelsShort(msg) {
     let timeInSeconds = ANNOUNCEMENT_TIME_SHORT/1000;
     announcementShortTimeout = setTimeout( () => {
         msg.channel.send("@everyone Channels are changing in " + timeInSeconds  + " seconds!") //@everyone is used to tag everyone in the server.
-            .then(message => message.delete({ timeout: 5000 })); // delete message after 5 seconds
+            .then(message => message.delete({ timeout: 10000 })); 
     }, time);
 }
 
