@@ -21,7 +21,7 @@ function startTimeout(msg, changeChannelsInterval) {
     if (ANNOUNCEMENT_TIME_LONG > 0) {
         setTimeout(() => {
             msg.channel.send("@everyone Byen åpner om " + (ANNOUNCEMENT_TIME_LONG/1000/60) + " minutter!")
-                .then(message => message.delete({ timeout: 5000 })); // delete message after 5 seconds
+                .then(message => message.delete({ timeout: 10000 })); // delete message after 5 seconds
         }, millisecondsTillOpenByen - ANNOUNCEMENT_TIME_LONG)
     }
     
@@ -29,7 +29,7 @@ function startTimeout(msg, changeChannelsInterval) {
     if (ANNOUNCEMENT_TIME_SHORT > 0) {
         setTimeout(() => {
             msg.channel.send("@everyone Byen åpner om " + (ANNOUNCEMENT_TIME_SHORT/1000) + " sekunder!")
-                .then(message => message.delete({ timeout: 5000 })); // delete message after 5 seconds
+                .then(message => message.delete({ timeout: 10000 })); // delete message after 5 seconds
         }, millisecondsTillOpenByen - ANNOUNCEMENT_TIME_SHORT)
     }
 }

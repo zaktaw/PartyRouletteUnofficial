@@ -91,7 +91,7 @@ function makeGroups(membersShuffled, channelsShuffled) {
         let channel = channelsShuffled[channelCounter];
         let member = membersShuffled[i];
 
-        console.log("  Member: " + member.displayName + " => " + channel.name);
+        console.log(`  Member: ${member.user.username} (${member.displayName}) => ${channel.name}`);
 
         groups[channelCounter][groupMemberCounter+1] = member; // assign member to group. +1 becauce the first value is reserved for the voice channel.
         groupMemberCounter++;
@@ -126,7 +126,7 @@ function makeCorrections(groups) {
                 if (groups[i].length < smallestGroup.length) smallestGroup = groups[i];
             }
 
-            console.log('Correction: ' + member.displayName + ' => ' + smallestGroup[0].name);
+            console.log(`Correction: ${member.displayName} => ${smallestGroup[0].name}`);
             smallestGroup.push(member); // add member to the smallest group
         }
 
