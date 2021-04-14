@@ -82,6 +82,9 @@ async function off(msg) {
                     allow: [ 'SEND_MESSAGES' ]
                 }
             ])
+
+            channel.bulkDelete(100)
+                .catch(err => console.log(err))
         }
 
         else if (channel.type == "voice") {
