@@ -156,7 +156,7 @@ function announceChangingChannelsLong(msg) {
     let timeInMinutes = ANNOUNCEMENT_TIME_LONG/1000/60;
     announcementLongTimeout = setTimeout( () => {
         msg.channel.send(MENTION + " Channels are changing in " + timeInMinutes  + (timeInMinutes>1?" minutes":" minute") + "!")
-            .then(message => message.delete({ timeout: 10000 })); 
+            .then(message => message.delete({ timeout: 30000 })); 
     }, time);
 }
 
@@ -166,7 +166,7 @@ function announceChangingChannelsShort(msg) {
     let timeInSeconds = ANNOUNCEMENT_TIME_SHORT/1000;
     announcementShortTimeout = setTimeout( () => {
         msg.channel.send(MENTION + " Channels are changing in " + timeInSeconds  + " seconds!")
-            .then(message => message.delete({ timeout: 10000 })); 
+            .then(message => message.delete({ timeout: 30000 })); 
     }, time);
 }
 
