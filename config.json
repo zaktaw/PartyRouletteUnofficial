@@ -1,11 +1,11 @@
 {
     "prefix": "pr ",
-    "rouletteDuration": 900000,
+    "rouletteDuration": 60000,
     "minGroupSize": 3,
     "maxGroupSize": 5,
-    "announcementTimeLong": 180000,
-    "announcementTimeShort": 30000,
-    "byenOpenTime": 1618088400,
+    "announcementTimeLong": 30000,
+    "announcementTimeShort": 5000,
+    "byenOpenTime": 1620294599,
     "announcementtimeByenLong": 600000,
     "announcementtimeByenSort": 60000,
     "partyRouletteServerID": "693391889470193674",
@@ -17,5 +17,6 @@
     "spillTextChannelID": "819639761001381938",
     "invitasjonChannelID": "823168772605083670",
     "textChatCategoryID": "693391889470193675",
-    "timeoutRoleID": "823967642170949752"
+    "timeoutRoleID": "823967642170949752",
+    "notifyRole": "839464734339891220"
 }

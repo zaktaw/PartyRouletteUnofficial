@@ -10,6 +10,7 @@ const ANNOUNCEMENT_TIME_LONG = config.announcementTimeLong; // announce to the m
 const ANNOUNCEMENT_TIME_SHORT = config.announcementTimeShort; // announce to the members that the channels are changing in x time short before channels are changing (time in milleseconds). Disabled if time=0.
 const MIN_GROUP_SIZE = config.minGroupSize; // the preferred minimum number of members that will be assigned to each channel. 
 const MAX_GROUP_SIZE = config.maxGroupSize; // the preferred maximum number of members that will be assigned to each channel.
+const MENTION = `<@&${config.notifyRole}>`;
 
 let rouletteID = 0; // tracks how many roulettes that have been executed for logging purposes.
 let started = false; // a roulette has been started.
@@ -154,7 +155,7 @@ function announceChangingChannelsLong(msg) {
     let time = ROULETTE_DURATION - ANNOUNCEMENT_TIME_LONG; // how long before sending announcement.
     let timeInMinutes = ANNOUNCEMENT_TIME_LONG/1000/60;
     announcementLongTimeout = setTimeout( () => {
-        msg.channel.send("@everyone Channels are changing in " + timeInMinutes  + (timeInMinutes>1?" minutes":" minute") + "!") //@everyone is used to tag everyone in the server.
+        msg.channel.send(MENTION + " Channels are changing in " + timeInMinutes  + (timeInMinutes>1?" minutes":" minute") + "!")
             .then(message => message.delete({ timeout: 10000 })); 
     }, time);
 }
@@ -164,7 +165,7 @@ function announceChangingChannelsShort(msg) {
     let time = ROULETTE_DURATION - ANNOUNCEMENT_TIME_SHORT; // how long before sending announcement.
     let timeInSeconds = ANNOUNCEMENT_TIME_SHORT/1000;
     announcementShortTimeout = setTimeout( () => {
-        msg.channel.send("@everyone Channels are changing in " + timeInSeconds  + " seconds!") //@everyone is used to tag everyone in the server.
+        msg.channel.send(MENTION + " Channels are changing in " + timeInSeconds  + " seconds!")
             .then(message => message.delete({ timeout: 10000 })); 
     }, time);
 }
